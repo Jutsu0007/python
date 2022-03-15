@@ -1,0 +1,20 @@
+#Download GIT BASH windows 64 bits
+#instalar
+
+abrir o prompt do windows => CMD
+navegar para o local => D:
+CD curso Python ' Seu nome'
+CD aula01
+dir
+
+
+#comandos do GIT
+git init
+
+git config --global user.name "Dereck Souza"
+git config --global user.email "dereckdsouza@mail.com"
+git add .
+git commit -m "versao inicial"
+git branch -M aula03
+git remote add origin https://github.com/Jutsu0007/python.git
+git push -u origin aula03
