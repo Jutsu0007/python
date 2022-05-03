@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #pagina{
+            width: 50%;
+            height: 100%;
+            background-color: rgb(229, 255, 0);
+            margin: auto;
+        }
+
+        #imagem{
+            width: 70%;
+            margin: 0 0 0 150px;
+            border-color: brown;
+            border-width: 5px;
+            border-style: solid;
+            border-radius: 50px;
+            cursor: pointer;
+        
+        }
+
+        footer {
+            text-align: center;
+            background-color: rgb(21, 24, 24);
+            color:brown;
+            padding: 3px;
+        }
+
+        footer a {
+            color: rgb(247, 239, 239);
+            font-family: 'Courier New', Courier, monospace';
+        }
+
+    </style>
+
+
+</head>
+<body onload="autoOpacidade()">
+    <div id="pagina"></div>
+
+<script>
+    var pagina = document.getElementById('pagina');
+    var indImagem = 1;
+    var opacidade = 1;
+    var reduzir = true;
+
+    pagina.innerHTML= '<h2>Exemplo for</h2>';
+    for (i=1; i<5; i++){
+        pagina.innerHTML += '<h3>' + i + '</h3>';
+
+
+    }
+
+    pagina.innerHTML += '<h2>Exemplo do while </h2>';
+    var i = 1;
+    do {
+        pagina.innerHTML += '<h3>' + i + '</h3>';
+        i++;
+    
+    } while (i < 5);
+
+    pagina.innerHTML += '<img id= "imagem" src="https://softgraf.com/img/img1.jpg" onclick="mudarOpacidade()"  />';
+
+    function trocarImagem(){
+        let imagem = document.getElementById('imagem');
+        indImagem++;
+        if (indImagem > 7)
+            indImagem = 1;
+        imagem.src = "https://softgraf.com/img/img" + indImagem + ".jpg";
+    }
+
+    function mudarOpacidade(){
+        let imagem = document.getElementById('imagem');
+        if (reduzir)
+            opacidade -= 0.1;
+        else
+            opacidade += 0.1;
+
+        if (opacidade <= 0){
+            reduzir = false;
+            trocarImagem();
+        }else if (opacidade >=4)
+            reduzir = true;
+        
+
+        imagem.style.opacity = opacidade;
+    }
+
+    function autoOpacidade(){
+        setInterval("mudarOpacidade()", 20);
+    }
+
+
+    </script>
+    <hr>
+    <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sunt quaerat laudantium? Repellat dolores dolorem facere exercitationem voluptas facilis minus sapiente iusto iste assumenda incidunt atque, cum provident excepturi quo.
+    </p>
+
+    </label>Baixando arquivo </label>
+    <progress id="file"value="66" max="100"></progress>
+    <ol type="I">
+        <li>Item 1</li>
+        <li>Item 1</li>
+        <li>Item 1</li>
+    </ol>
+
+    <ul style="list-style-type: unset">
+        <li>Cafe</li>
+        <li>Cha</li>
+        <li>Leite</li>
+    </ul>
+
+    <hr>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/u34gHaRiBIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+
+    <canvas id="meuCanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById("meuCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(20, 20, 75, 50);
+
+        // Muda a transparencia para 20%
+        ctx.globalAlpha = 0.8;
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 75, 50);
+
+        ctx.globalAlpha = 0.5;
+        ctx.fillStyle = "green";
+        ctx.fillRect(80, 80, 75, 50);
+
+    </script>
+
+    <footer>
+        <p>Autor: Déreck Souza <br>
+            <a href="https://softgraf.com" target="_blank">SOFTGRAF Cursos avançados</a>
+
+        </p>
+    </footer>
+
+</body>
+</html>
+
+
+
